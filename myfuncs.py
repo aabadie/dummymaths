@@ -22,3 +22,10 @@ def divide(a, b):
 def power(a, b):
     """Return a power b."""
     return a ** b
+
+def modulo(a, b):
+    """Return a modulo b."""
+    try:
+        return a % b
+    except ZeroDivisionError:
+        return None
