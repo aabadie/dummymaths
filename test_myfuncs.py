@@ -1,6 +1,6 @@
 import pytest
 
-from myfuncs import add, sub, multiply, divide, power
+from myfuncs import add, sub, multiply, divide, power, modulo
 
 @pytest.mark.parametrize(
     "a,b,res",
@@ -76,4 +76,17 @@ def test_divide(a, b, res):
 def test_power(a, b, res):
     assert power(a, b) == res
 
-
+@pytest.mark.parametrize(
+    "a,b,res",
+    [
+        (0, 0, None),
+        (0, 42, 0),
+        (42, 0, None),
+        (42, 1, 0),
+        (1, 42, 1),
+        (10, 3, 1),
+        (10, 5, 0),
+    ]
+)
+def test_modulo(a, b, res):
+    assert modulo(a, b) == res
